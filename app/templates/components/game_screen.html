@@ -1,34 +1,38 @@
 <div id="game-container">
-<div class="flex flex-col min-h-full bg-gray-50">
-    <!-- Header -->
-    <header class="flex items-center justify-between p-3 bg-white border-b border-gray-200">
+<div class="flex flex-col min-h-full">
+
+    <!-- ── Frosted header ──────────────────────────────────── -->
+    <header class="arctic-header flex items-center justify-between p-3">
         <button
             hx-post="/reset"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="text-gray-500 text-sm px-3 py-1.5 rounded active:bg-gray-100">
+            class="btn-ghost">
             ← Back
         </button>
-        <h1 class="font-bold text-gray-900">Soc Ops</h1>
+        <span style="font-family:var(--font-display);font-size:0.72rem;letter-spacing:0.28em;color:var(--text-secondary);text-transform:uppercase;">
+            Soc&nbsp;Ops
+        </span>
         <div class="w-16"></div>
     </header>
 
-    <!-- Instructions -->
-    <p class="text-center text-gray-500 text-sm py-2 px-4">
+    <!-- ── Hint text ───────────────────────────────────────── -->
+    <p class="hint-text py-2 px-4">
         Tap a square when you find someone who matches it.
     </p>
 
-    <!-- Bingo indicator -->
+    <!-- ── Bingo indicator ─────────────────────────────────── -->
     {% if session.has_bingo %}
-    <div class="bg-amber-100 text-amber-800 text-center py-2 font-semibold text-sm">
-        🎉 BINGO! You got a line!
+    <div class="bingo-banner">
+        ✦&nbsp;&nbsp;BINGO! You got a line!&nbsp;&nbsp;✦
     </div>
     {% endif %}
 
-    <!-- Board -->
+    <!-- ── Board ───────────────────────────────────────────── -->
     <div class="flex-1 flex items-center justify-center p-3">
         {% include "components/bingo_board.html" %}
     </div>
+
 </div>
 
 {% if session.show_bingo_modal %}

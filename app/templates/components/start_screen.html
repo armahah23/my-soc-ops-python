@@ -1,25 +1,42 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+<div class="start-screen">
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
-        </div>
+    <!-- ── Logo block ──────────────────────────────────────── -->
+    <div class="logo-lockup anim-1">
+        <div class="logo-title">Soc Ops</div>
+        <div class="logo-subtitle">Social &nbsp;·&nbsp; Bingo</div>
+        <div class="logo-rule"></div>
+    </div>
 
+    <!-- ── How to play card ────────────────────────────────── -->
+    <div class="how-to-play anim-3">
+        <p class="how-to-play-label">How to play</p>
+        <ul class="how-to-play-steps">
+            <li>
+                <span class="step-icon">◈</span>
+                Find people around you who match the squares
+            </li>
+            <li>
+                <span class="step-icon">◈</span>
+                Tap a square when you find a match
+            </li>
+            <li>
+                <span class="step-icon">◈</span>
+                Get 5 in a row to claim BINGO!
+            </li>
+        </ul>
+    </div>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <div class="w-full max-w-sm anim-4">
         <button
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
+            class="btn-arctic w-full py-4 px-8 rounded-lg">
+            ❄&nbsp;&nbsp;Begin Game
         </button>
     </div>
+
 </div>
 </div>
